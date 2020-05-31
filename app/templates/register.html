@@ -1,17 +1,23 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Register</h1>
+
+<center><div class="login-div" style="padding-top: 15px;"><center>
+    <p>
+    <br>
+    <br>
+    <h2>Register</h2>
     <form action="" method="post">
         {{ form.hidden_tag() }}
+        <br>
         <p>
-            {{ form.username.label }}<br>
-            {{ form.username(size=32) }}<br>
+            <!--{{ form.username.label }}<br>-->
+            {{ form.username(size=32, class_='username') }}<br>
         </p>
         <p>
-            {{ form.password.label }}<br>
-            {{ form.password(size=32) }}<br>
+            <!--{{ form.password.label }}<br>-->
+            {{ form.password(size=32, class_='password') }}<br>
         </p>
-        <p>{{ form.submit() }}</p>
+        <p>{{ form.submit(class_='loginbutton') }}</p>
     </form>
 {% endblock %}

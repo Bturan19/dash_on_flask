@@ -1,0 +1,46 @@
+.login-div {
+  width:50%;
+  height: 700px;
+  padding: 160px 35px 35px 35px;
+  border-radius: 40px;
+  background: #ecf0f3;
+  align-content: center;
+  box-shadow: 13px 13px 20px #cbced1,
+              -13px -13px 20px #ffffff;
+}
+
+.fields {
+  width: 100%;
+  padding: 75px 5px 5px 5px;
+}
+
+.fields input {
+  border: none;
+  outline:none;
+  background: none;
+  font-size: 18px;
+  color: #222 !important;
+  padding:20px 10px 20px 5px;
+}
+
+.username, .password {
+  margin-bottom: 30px;
+  border-radius: 25px;
+  color: blue !important;
+  border: 10px solid #ff0000;
+  box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #ffffff;
+}
+
+
+.input {
+    text-indent: 0px;
+    display: inline-block;
+    text-align: center;
+    cursor: text;
+    margin: 0em;
+    font: 400 13.3333px Arial;
+    padding: 1px 2px;
+    border-width: 2px;
+    border-style: inset;
+}

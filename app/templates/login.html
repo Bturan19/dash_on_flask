@@ -1,22 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Sign In</h1>
-<form action="" method="post" novalidate>
-  {{ form.hidden_tag() }}
-  <p>
-    {{ form.username.label }}<br>
-    {{ form.username(size=32) }}<br>
-  </p>
-  <p>
-    {{ form.password.label }}<br>
-    {{ form.password(size=32) }}<br>
-  </p>
-  <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
-  <p>{{ form.submit() }}</p>
-  {% if error %}
-  <p class="error"><strong>Error:</strong> {{ error }}
-    {% endif %}
-</form>
-<p> New User? <a href="{{ url_for('main.register') }}">Click to Register!</a></p>
-{% endblock %}
+
+
+<center><div class="login-div" style="padding-top: 15px;"><center>
+
+  <form action="" method="post" novalidate>
+    {{ form.hidden_tag() }}
+      <p>
+      <br>
+      <br>
+      <h2><center>Please Sign In</center></h2>
+      <br>
+      <!--{{ form.username.label }}<br>-->
+      {{ form.username(size=32, class_='username') }}<br>
+      </p>
+    <p>
+      <!--{{ form.password.label }}<br>-->
+      {{ form.password(size=32, class_='password') }}<br>
+    </p>
+    <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+    <p>{{ form.submit(class_='logginbutton') }}</p>
+    {% if error %}
+    <p class="error"><strong>Error:</strong> {{ error }}
+      {% endif %}
+  </form>
+  <p> New User? <a href="{{ url_for('main.register') }}">Click to Register!</a></p>
+  {% endblock %}
+
+</center></div></center>

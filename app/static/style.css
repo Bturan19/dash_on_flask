@@ -1,0 +1,34 @@
+.login-div {
+  width:50%;
+  height: 700px;
+  padding: 35px 35px 35px 35px;
+  border-radius: 40px;
+  align-content: center;
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow:  20px 20px 60px #d9d9d9, 
+               -20px -20px 60px #ffffff;}
+
+
+.username, .password {
+  width: 35%;
+  height: 10%;
+  margin-bottom: 30px;
+  border-radius: 25px;
+  color: blue !important;
+  text-align: center;
+  font-size: large;
+  font-weight: bold;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: inset 18px 18px 36px #ebebeb, 
+              inset -18px -18px 36px #ffffff;
+}
+
+.loginbutton {
+  transition-duration: 0.4s;
+}
+.loginbutton:hover {
+  background-color: #9b9e9c; 
+  color: white;
+}
+
