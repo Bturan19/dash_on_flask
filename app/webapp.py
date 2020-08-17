@@ -14,6 +14,9 @@ from app.forms import LoginForm
 from app.forms import RegistrationForm
 from app.models import User
 
+import json
+import plotly
+
 server_bp = Blueprint('main', __name__)
 
 
@@ -66,3 +69,30 @@ def register():
         return redirect(url_for('main.login'))
 
     return render_template('register.html', title='Register', form=form)
+
+@server_bp.route('/analiz/')
+def analiz():
+    import pandas as pd
+    df = pd.read_csv("/home/turan/Documents/repos/financial/data/result.csv", 
+                    names=['index','date','hi','lo','close','open','high','low',
+                             'real_hi','real_lo', 'pred_1', 'calc_1', 'rsi', 'rsi_t'],
+                    parse_dates=['date'])
+    data = df[['date', 'open', 'high', 'low', 'close', 'hi', 'lo']].tail(5)
+
+    ts = df[['date','close']].set_index('date')
+    #ts = df['close']
+
+    graphs = [
+        dict(
+            data=[
+                dict(
+                    x=ts.index,  # Can use the pandas data structures directly
+                    y=ts.close
+                )
+            ]
+        )
+    ]
+    graphJSON = json.dumps(graphs, cls=plotly.utils.PlotlyJSONEncoder)
+    ids = ['graph-{}'.format(i) for i, _ in enumerate(graphs)]
+    return render_template('analiz.html', ids=ids,
+                           graphJSON=graphJSON)

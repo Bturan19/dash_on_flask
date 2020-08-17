@@ -12,3 +12,9 @@ __pycache__
 
 # DB
 app.db
+
+#venv
+/venv/*
+venv/*
+/venv/.*
+venv/.*

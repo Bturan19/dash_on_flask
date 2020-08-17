@@ -29,7 +29,7 @@ def register_callbacks(dashapp):
         [Input('interval-component', 'interval')])
     def update_graph(interval):
 
-        df = pd.read_csv("C:/Users/turan2/Documents/results.csv", 
+        df = pd.read_csv("/home/turan/Documents/repos/financial/data/result.csv", 
                     names=['index','date','hi','lo','close','open','high','low',
                              'real_hi','real_lo', 'pred_1', 'calc_1', 'rsi', 'rsi_t'],
                     parse_dates=['date'])
